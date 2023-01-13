@@ -50,6 +50,19 @@
 
         }
         .tecla_limpar:hover{
+            background-color: rebeccapurple;
+        }
+        .tecla_corrigir{
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+            background-color: red;
+            color: black;
+
+        }
+        .tecla_corrigir:hover{
             background-color: darkmagenta;
         }
         .tecla_especial{
@@ -87,8 +100,26 @@
             font-size: 25px;
             text-align: right;
             padding: 5px;
+            overflow-x: auto;
+            overflow-y: hidden;
             
         }
+
+        ::-webkit-scrollbar{
+            height: 5px;
+
+        }
+        ::-webkit-scrollbar-track{
+            background-color: gray;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: limegreen;
+        }
+        ::-webkit-scrollbar-thumb:hover{
+            background-color: lime;
+        }
+        
+
     </style>
 </head>
 <body>
@@ -99,8 +130,9 @@
             <p id="resultado"></p>
             <table>
                 <tr>
-                    <td colspan="2"><button class="tecla_limpar" style="width: 106px;" onclick="limpar()">C</button></td>
-                    <td><button class="tecla" onclick="corrigir()"><<</button></td>
+                    <td><button class="tecla_limpar" onclick="limpar()">C</button></td>
+                    <td><button class="tecla_corrigir" onclick="corrigir()"><<</button></td>
+                    <td><button class="tecla_especial" onclick="inserir('.')">.</button></td>
                     <td><button class="tecla_especial" onclick="inserir('/')"> ➗ </button></td>
                 </tr>
                 <tr>
@@ -122,9 +154,10 @@
                     <td><button class="tecla_especial" onclick="inserir('+')"> ➕ </button></td>
                 </tr>
                 <tr>
-                    <td><button class="tecla" onclick="inserir('.')">.</button></td>
+                    <td><button class="tecla_especial" onclick="inserir('(')">(</button></td>
                     <td><button class="tecla" onclick="inserir('0')">0</button></td>
-                    <td colspan="2"><button class="tecla_igual" style="width: 106px;"onclick="calcular()"> 🟰 </button></td>
+                    <td><button class="tecla_especial" onclick="inserir(')')">)</button></td>
+                    <td><button class="tecla_igual" onclick="calcular()"> 🟰 </button></td>
                 </tr>
             </table>
         </div>
